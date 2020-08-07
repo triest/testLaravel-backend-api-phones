@@ -14,6 +14,7 @@
         protected $except = [
             //
                 "api/phones",
-                "api/offers/create"
+                "api/offers/create".
+                "api/phones/:id"
         ];
     }

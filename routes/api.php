@@ -23,7 +23,8 @@
 
     Route::group(['prefix' => 'phones'], function () {
         Route::get('/', [CPhone::class, 'phoneGetWithOffers']);
-        Route::post('/create', [CPhone::class, 'create']);
+        Route::post('/', [CPhone::class, 'create']);
+        Route::delete('/{id}', [CPhone::class, 'delete']);
     });
 
     Route::group(['prefix' => 'brands'], function () {
