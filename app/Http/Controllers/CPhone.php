@@ -2,25 +2,27 @@
 
     namespace App\Http\Controllers;
 
-
-    use App\Http\Requests\ReqPhoneDelete;
     use App\Http\Requests\RPhone;
     use App\Http\Resources\ResPhone;
-    use App\Models\Phone;
+    use App\Service\SPhone;
     use App\Service\SPhoneCreate;
     use App\Service\SPhoneDelete;
-    use Illuminate\Http\Request;
-    use App\Service\SPhone;
     use Illuminate\Http\Resources\Json\JsonResource;
 
+    /**
+     * Class CPhone
+     * @package App\Http\Controllers
+     */
     class CPhone extends Controller
     {
         //
+        /**
+         * @param SPhone $SPhone
+         * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+         */
         public function phoneGetWithOffers(SPhone $SPhone)
         {
             $phones = $SPhone->getAll();
-
-
             return ResPhone::collection($phones);
         }
 
@@ -53,7 +55,7 @@
             if ($SPhoneDelete->delete()) {
                 return response()->json(['result' => true]);
             } else {
-                return response()->json(['result' => false]);
+                return response()->json(['result' => "phone not found"]);
             }
 
         }
