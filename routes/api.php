@@ -1,5 +1,7 @@
 <?php
 
+    use App\Http\Controllers\CBrand;
+    use App\Http\Controllers\COffer;
     use App\Http\Controllers\CPhone;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
@@ -21,4 +23,14 @@
 
     Route::group(['prefix' => 'phones'], function () {
         Route::get('/', [CPhone::class, 'phoneGetWithOffers']);
+        Route::post('/create', [CPhone::class, 'create']);
+    });
+
+    Route::group(['prefix' => 'brands'], function () {
+        Route::get('/', [CBrand::class, 'getAll']);
+    });
+
+    Route::group(['prefix' => 'offers'], function () {
+        Route::get('/', [COffer::class, 'getAll']);
+        Route::post('/create', [COffer::class, 'create']);
     });

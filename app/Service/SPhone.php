@@ -15,7 +15,7 @@
 
 
         function getAll(){
-            return Phone::select('*')->with('offer')->get();
+            return Phone::select('*')->with('offers')->get();
         }
 
         function addPhone(PhoneRequwest $requwest){

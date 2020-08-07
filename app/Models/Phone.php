@@ -8,11 +8,11 @@ class Phone extends Model
 {
     //
 
-    public function brend(){
-       return $this->hasOne(Brend::class,'brend_id','id');
+    public function brand(){
+       return $this->hasOne(Brand::class,'brand_id','id');
     }
 
     public function offers(){
-        return $this->belongsTo(Offer::class);
+        return $this->hasMany(Offer::class);
     }
 }

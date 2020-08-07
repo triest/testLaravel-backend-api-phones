@@ -15,7 +15,7 @@ class AddForeginKeyFromPhoneToBrends extends Migration
     {
         Schema::table('phones', function (Blueprint $table) {
             //
-           $table->foreignId('brend_id')->constrained();
+           $table->foreignId('brand_id')->constrained();
         });
     }
 
@@ -26,9 +26,9 @@ class AddForeginKeyFromPhoneToBrends extends Migration
      */
     public function down()
     {
-        Schema::table('phone_to_brends', function (Blueprint $table) {
+        Schema::table('phone_to_brands', function (Blueprint $table) {
             //
-            $table->dropForeign('brend_id');
+            $table->dropForeign('brand_id');
         });
     }
 }

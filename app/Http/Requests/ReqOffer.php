@@ -4,7 +4,7 @@
 
     use Illuminate\Foundation\Http\FormRequest;
 
-    class RPhone extends FormRequest
+    class ReqOffer extends FormRequest
     {
         /**
          * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@
         public function rules()
         {
             return [
-                    'name' => 'required',
-                    'price' => 'required|numeric|min:0',
-                    'brand_id' => 'required|exists:brends,id',
-                    'year' => 'required|numeric|max:' . date('Y')
+                    'phone_id' => 'required|exists:phones,id',
+                    'color' => 'required|string|min:3',
+                    'memory' => 'required|integer|min:0'
             ];
         }
     }
