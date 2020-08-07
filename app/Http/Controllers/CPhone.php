@@ -28,7 +28,7 @@
 
         /**
          * @param RPhone $request
-         * @param SPhoneCreate $SOfferCreate
+         * @param SPhoneCreate $SPhoneCreate
          * @return JsonResource
          */
         public function create(RPhone $requwest, SPhoneCreate $SPhoneCreate): JsonResource

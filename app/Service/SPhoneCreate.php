@@ -35,7 +35,7 @@
             $this->name = $array["name"];
             $this->price = $array["price"];
             $this->year = $array["year"];
-            $this->brand_id=$array["brand_id"];
+            $this->brand_id = $array["brand_id"];
         }
 
         public function create()
