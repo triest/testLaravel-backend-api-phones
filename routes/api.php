@@ -17,10 +17,6 @@
     |
     */
 
-    Route::middleware('auth:api')->get('/user', function (Request $request) {
-        return $request->user();
-    });
-
     Route::group(['prefix' => 'phones'], function () {
         Route::get('/', [CPhone::class, 'phoneGetWithOffers']);
         Route::post('/create', [CPhone::class, 'create']);
